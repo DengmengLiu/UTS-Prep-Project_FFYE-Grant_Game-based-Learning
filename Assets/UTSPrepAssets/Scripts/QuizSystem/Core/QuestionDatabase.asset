@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798782dbdc324b949a9d4db9d395d9f2, type: 3}
+  m_Name: QuestionDatabase
+  m_EditorClassIdentifier: 
+  questions:
+  - questionText: 'I''m struggling with math and science subjects. Where should I
+      go for help?    '
+    options:
+    - UTS HELPS
+    - 'Special Consideration '
+    - 'U:PASS '
+    - MSSC
+    - 'MyTimeTable '
+    - 'FEIT Learning precinct '
+    - 'Student space '
+    correctOptionIndex: 3
+    hint: "Need help with Maths and Science \u2013 MSSC "
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: 'I need some assistance with my assignment. Where can I find support? '
+    options:
+    - 'U:PASS '
+    - 'MyTimeTable '
+    - 'Student space '
+    - MSSC
+    - 'Special Consideration '
+    - 'FEIT Learning precinct '
+    - UTS HELPS
+    correctOptionIndex: 6
+    hint: 'Help with assignment: UTS HELPS '
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: 'This subject is really tough. Where can I go for peer support? '
+    options:
+    - 'FEIT Learning precinct '
+    - 'U:PASS '
+    - 'Student space '
+    - UTS HELPS
+    - MSSC
+    - 'Special Consideration '
+    - 'MyTimeTable '
+    correctOptionIndex: 1
+    hint: 'Support with dificult subjects: U:PASS '
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: 'I need a place to study with my classmates. Where can I go for
+      collaborative study? '
+    options:
+    - 'Student space '
+    - UTS HELPS
+    - 'MyTimeTable '
+    - 'Special Consideration '
+    - 'U:PASS '
+    - 'FEIT Learning precinct '
+    - MSSC
+    correctOptionIndex: 5
+    hint: 'Collaboratie study - FEIT learning precinct '
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: "I\u2019m looking for a quiet place to focus on my work. Where
+      should I go? "
+    options:
+    - 'MyTimeTable '
+    - 'FEIT Learning precinct '
+    - 'Special Consideration '
+    - UTS HELPS
+    - 'U:PASS '
+    - MSSC
+    - 'Student space '
+    correctOptionIndex: 6
+    hint: 'Where to study: Student spaces - <link =https://www.uts.edu.au/about/about-our-campus/our-campus/student-spaces-campus>Link</link> '
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: 'I''m seriously sick and can''t submit an assessment? '
+    options:
+    - 'Student space '
+    - 'Special Consideration '
+    - MSSC
+    - 'FEIT Learning precinct '
+    - UTS HELPS
+    - 'MyTimeTable '
+    - 'U:PASS '
+    correctOptionIndex: 1
+    hint: 
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  - questionText: 'I need to allocate myself to classes. What should I do? '
+    options:
+    - 'MyTimeTable '
+    - UTS HELPS
+    - 'FEIT Learning precinct '
+    - 'Student space '
+    - 'U:PASS '
+    - MSSC
+    - 'Special Consideration '
+    correctOptionIndex: 0
+    hint: 
+    points: 10
+    penalty: 5
+    timeLimit: 10
+  settings:
+    defaultTimeLimit: 10
+    defaultPoints: 10
+    defaultPenalty: 5
+    enableRandomOrder: 1
+    questionsPerRound: 0
+    defaultHint: Please think carefully!

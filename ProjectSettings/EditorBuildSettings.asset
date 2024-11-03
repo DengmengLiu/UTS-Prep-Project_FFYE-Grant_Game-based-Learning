@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/0_0MainMenuScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_1.unity
+    guid: 3c49749c6ffcd0145b18f93830e572b3
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_2.unity
+    guid: e0e1450681e8072449cf8dcafa0067e1
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_3.unity
+    guid: f9269d1959478f74899f6e871108cbe1
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_4.unity
+    guid: a213487297ac58d48ad3ec2125a4905c
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_5.unity
+    guid: 44dfd0fe5451ab141996809ec9d1989e
+  - enabled: 1
+    path: Assets/UTSPrepAssets/Scenes/Level_6.unity
+    guid: 1cad5308b717aed48a739a838323de18
+  - enabled: 0
+    path: Assets/YoutubeVideoPlayer/Samples/Youtube Player/3.3.0/PlayVideo/PlayVideo.unity
+    guid: 2b6c73b04dfb2400cb64b1d09ae8265e
+  m_configObjects: {}

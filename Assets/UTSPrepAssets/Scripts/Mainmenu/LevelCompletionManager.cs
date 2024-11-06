@@ -51,16 +51,18 @@ public class LevelCompletionManager : MonoBehaviour
     public void ResetAllProgress()
     {
         PlayerPrefs.DeleteKey("Level_0_Completed"); // 气球关卡
-        PlayerPrefs.DeleteKey("Level_1_Completed");
+        PlayerPrefs.DeleteKey("Level_1_Completed"); 
         PlayerPrefs.DeleteKey("Level_2_Completed");
         PlayerPrefs.DeleteKey("Level_3_Completed");
+        PlayerPrefs.DeleteKey("Level_4_Completed");
+        
         PlayerPrefs.Save();
     }
 
     // 检查是否所有关卡都已完成
     public bool AreAllLevelsCompleted()
     {
-        for (int i = 0; i < 1; i++) // 假设总共有4个关卡
+        for (int i = 0; i < 2; i++) // 假设总共有5个关卡
         {
             if (!IsLevelCompleted(i))
             {

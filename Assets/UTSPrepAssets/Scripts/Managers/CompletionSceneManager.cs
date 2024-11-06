@@ -6,23 +6,27 @@ public class CompletionSceneManager : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private TextMeshProUGUI[] levelStatusTexts;
-    [SerializeField] private Button rewardLinkButton;
+    [SerializeField] private Button rewardLinkButton;  // 定义 rewardLinkButton
     [SerializeField] private TextMeshProUGUI rewardButtonText;
-    
-    [Header("Settings")]
-    [SerializeField] private int totalLevels = 4;
-    [SerializeField] private string rewardURL = "https://example.com";
-    
+
     [Header("Button Settings")]
     [SerializeField] private Color normalColor = Color.white;
     [SerializeField] private Color disabledColor = new Color(0.7f, 0.7f, 0.7f, 1f);
     [SerializeField] private string lockedText = "Complete all levels to unlock";
     [SerializeField] private string unlockedText = "Click to claim your reward!";
 
+    private URLButtonOpener urlButtonOpener;
+
     private void Start()
     {
         if (ValidateComponents())
         {
+            urlButtonOpener = rewardLinkButton.GetComponent<URLButtonOpener>();
+            if (urlButtonOpener == null)
+            {
+                Debug.LogError("URLButtonOpener component not found on rewardLinkButton.");
+            }
+
             UpdateLevelStatus();
             UpdateRewardButton();
         }
@@ -30,9 +34,9 @@ public class CompletionSceneManager : MonoBehaviour
 
     private bool ValidateComponents()
     {
-        if (levelStatusTexts == null || levelStatusTexts.Length < totalLevels)
+        if (levelStatusTexts == null || levelStatusTexts.Length == 0)
         {
-            Debug.LogError($"Level status texts not properly configured! Expected {totalLevels} texts.");
+            Debug.LogError("Level status texts are not properly configured!");
             return false;
         }
 
@@ -47,12 +51,12 @@ public class CompletionSceneManager : MonoBehaviour
 
     private void UpdateLevelStatus()
     {
-        for (int i = 0; i < totalLevels && i < levelStatusTexts.Length; i++)
+        for (int i = 0; i < levelStatusTexts.Length; i++)
         {
             if (levelStatusTexts[i] != null)
             {
                 bool isCompleted = LevelCompletionManager.Instance.IsLevelCompleted(i);
-                levelStatusTexts[i].text = $"Level - {i + 1} {(isCompleted ? "1" : "0")}/1";
+                levelStatusTexts[i].text = $"Level - {i + 1} \t\t {(isCompleted ? "1" : "0")}/1";
             }
         }
     }
@@ -60,48 +64,21 @@ public class CompletionSceneManager : MonoBehaviour
     private void UpdateRewardButton()
     {
         bool allCompleted = LevelCompletionManager.Instance.AreAllLevelsCompleted();
-        
-        // 更新按钮交互状态
-        rewardLinkButton.interactable = allCompleted;
-        
-        // 更新按钮文本
+        SetButtonState(allCompleted);
+    }
+
+    private void SetButtonState(bool isEnabled)
+    {
+        if (urlButtonOpener != null)
+        {
+            urlButtonOpener.SetInteractable(isEnabled);
+        }
+
         if (rewardButtonText != null)
         {
-            rewardButtonText.text = allCompleted ? unlockedText : lockedText;
-            rewardButtonText.color = allCompleted ? normalColor : disabledColor;
+            rewardButtonText.text = isEnabled ? unlockedText : lockedText;
+            rewardButtonText.color = isEnabled ? normalColor : disabledColor;
         }
-        
-        // 更新按钮的视觉状态
-        var buttonImage = rewardLinkButton.GetComponent<Image>();
-        if (buttonImage != null)
-        {
-            buttonImage.color = allCompleted ? normalColor : disabledColor;
-        }
-    }
-
-    public void OnRewardButtonClicked()
-    {
-        if (string.IsNullOrEmpty(rewardURL))
-        {
-            Debug.LogError("Reward URL is not set!");
-            return;
-        }
-
-        if (LevelCompletionManager.Instance.AreAllLevelsCompleted())
-        {
-            OpenURL();
-        }
-    }
-
-    private void OpenURL()
-    {
-        #if UNITY_WEBGL && !UNITY_EDITOR
-            // 使用WebGL特定的URL打开方法
-            WebGLURLOpener.OpenURL(rewardURL);
-        #else
-            // 在其他平台使用标准方法
-            Application.OpenURL(rewardURL);
-        #endif
     }
 
     public void ResetProgress()
@@ -110,15 +87,4 @@ public class CompletionSceneManager : MonoBehaviour
         UpdateLevelStatus();
         UpdateRewardButton();
     }
-
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        if (totalLevels <= 0)
-        {
-            Debug.LogError("Total levels must be greater than 0!");
-            totalLevels = 1;
-        }
-    }
-#endif
 }

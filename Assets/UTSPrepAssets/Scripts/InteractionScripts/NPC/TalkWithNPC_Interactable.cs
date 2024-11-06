@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine;
 using DialogueEditor;
 
-public class TalkWithNPC : MonoBehaviour, IInteractable
+public class TalkWithNPC_Interactable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string promptText = "Talk";
     [SerializeField] private NPCConversation conversation;

@@ -9,10 +9,15 @@ namespace UTSOrientationGamePrototype
     {
         [Header("Display Settings")]
         public Image imageDisplay; // Reference to the Image component
-        public Sprite[] imageGallery; // Array to hold the PNG images
+        public GameObject[] panelGallery; // Array to hold the panels
         public TextMeshProUGUI messageText; // 添加提示文本组件
         public float messageDisplayTime = 2f; // 提示显示时间
         
+        [Header("UI Buttons")]
+        public Button nextButton; // Button to show the next panel
+        public Button prevButton; // Button to show the previous panel
+        public Button closeButton; // Button to close the gallery
+
         [Header("Events")]
         public UnityEvent onGalleryClose;
 
@@ -21,10 +26,10 @@ namespace UTSOrientationGamePrototype
 
         void Start()
         {
-            // Initialize by displaying the first image
-            if (imageGallery.Length > 0)
+            // Initialize by displaying the first panel
+            if (panelGallery.Length > 0)
             {
-                imageDisplay.sprite = imageGallery[currentIndex];
+                DisplayCurrentPanel();
             }
 
             // 初始化时隐藏提示文本
@@ -32,52 +37,49 @@ namespace UTSOrientationGamePrototype
             {
                 messageText.gameObject.SetActive(false);
             }
+
+            // Assign button click events
+            if (nextButton != null)
+            {
+                nextButton.onClick.AddListener(ShowNextPanel);
+            }
+            if (prevButton != null)
+            {
+                prevButton.onClick.AddListener(ShowPrevPanel);
+            }
+            if (closeButton != null)
+            {
+                closeButton.onClick.AddListener(CloseGallery);
+            }
         }
 
         void Update()
         {
-            // Use W key to show previous image
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                ShowPrevImage();
-            }
-            
-            // Use S key to show next image
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                ShowNextImage();
-            }
-            
-            // Use E key to close gallery
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                CloseGallery();
-            }
-
             // 更新提示消息的显示时间
             UpdateMessageDisplay();
         }
 
-        // Display the next image
-        void ShowNextImage()
+        // Display the next panel
+        void ShowNextPanel()
         {
-            if (imageGallery.Length == 0) return;
+            if (panelGallery.Length == 0) return;
 
-            if (currentIndex >= imageGallery.Length - 1)
+            if (currentIndex >= panelGallery.Length - 1)
             {
                 // 已经是最后一页，显示提示
                 ShowMessage("No more pages following");
                 return;
             }
 
+            panelGallery[currentIndex].SetActive(false);
             currentIndex++;
-            imageDisplay.sprite = imageGallery[currentIndex];
+            DisplayCurrentPanel();
         }
 
-        // Display the previous image
-        void ShowPrevImage()
+        // Display the previous panel
+        void ShowPrevPanel()
         {
-            if (imageGallery.Length == 0) return;
+            if (panelGallery.Length == 0) return;
 
             if (currentIndex <= 0)
             {
@@ -86,8 +88,18 @@ namespace UTSOrientationGamePrototype
                 return;
             }
 
+            panelGallery[currentIndex].SetActive(false);
             currentIndex--;
-            imageDisplay.sprite = imageGallery[currentIndex];
+            DisplayCurrentPanel();
+        }
+
+        // 显示当前的panel
+        void DisplayCurrentPanel()
+        {
+            if (panelGallery.Length > 0 && panelGallery[currentIndex] != null)
+            {
+                panelGallery[currentIndex].SetActive(true);
+            }
         }
 
         // 显示提示消息
@@ -120,13 +132,6 @@ namespace UTSOrientationGamePrototype
         // Close the image gallery
         void CloseGallery()
         {
-            imageDisplay.gameObject.SetActive(false);
-            if (messageText != null)
-            {
-                messageText.gameObject.SetActive(false);
-            }
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            
             onGalleryClose?.Invoke();
         }
     }

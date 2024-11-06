@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "UTS Prep Prototype.sln"
+    "dotnet.defaultSolution": "FFYE-Grant_Game-based-Learning.sln"
 }

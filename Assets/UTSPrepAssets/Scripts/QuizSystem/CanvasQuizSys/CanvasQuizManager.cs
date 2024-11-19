@@ -75,6 +75,7 @@ using UnityEngine.UI;
                 toggleList[i].isOn = false;
                 toggleList[i].interactable = !answeredQuestions.Contains(topicIndex);
             }
+            BtnTip.interactable = false;
 
             tipsText.text = "";
             indexText.text = "Question " + (topicIndex + 1) + ":";
@@ -144,6 +145,9 @@ using UnityEngine.UI;
 
                 // Mark question as answered
                 answeredQuestions.Add(topicIndex);
+
+                // Enable BtnTip after answering
+                BtnTip.interactable = true;
 
                 // Disable toggles after answering
                 for (int i = 0; i < toggleList.Count; i++)

@@ -1695,19 +1695,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2436523975245982541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 266590965}
-        m_TargetAssemblyTypeName: CompletionSceneManager, Assembly-CSharp
-        m_MethodName: OnRewardButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &5510416979811690810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1794,7 +1782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5914f70dd4e12d64c8d8269635fd234e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://www.google.com.au/
+  url: https://forms.office.com/Pages/ResponsePage.aspx?id=JhyR6J_PnEqHjlJ4B76HkXTDp7drzDRHp2HGaUvkIN1UNzlTVjIxTjlON0k2MlJQWUROTVZHMlNBTC4u
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

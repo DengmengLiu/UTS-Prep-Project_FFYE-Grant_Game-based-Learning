@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
-    private bool isCursorLocked = true;
+    private bool isCursorLocked = false;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class CursorController : MonoBehaviour
     // 可选：添加快捷键控制
     private void Update()
     {
-        // 示例：按 Escape 键切换鼠标状态
+        // 示例：按 Alt 键切换鼠标状态
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             ToggleCursorState();

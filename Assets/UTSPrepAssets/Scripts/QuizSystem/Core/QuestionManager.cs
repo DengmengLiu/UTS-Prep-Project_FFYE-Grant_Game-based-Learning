@@ -300,6 +300,7 @@ public class QuizManager : MonoBehaviour
     private void HandleExitBalloon()
     {
         LevelCompletionManager.Instance.MarkLevelAsCompleted(0);
+        Debug.Log($"Current PlayerPrefs values: Level_0_Completed = {PlayerPrefs.GetInt("Level_0_Completed", 0)}, Level_1_Completed = {PlayerPrefs.GetInt("Level_1_Completed", 0)}");
         StartCoroutine(LoadNextScene());
     }
 

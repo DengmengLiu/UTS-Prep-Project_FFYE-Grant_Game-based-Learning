@@ -6,7 +6,7 @@ public class BalloonOptionDisplay : MonoBehaviour
     [Header("Text Settings")]
     [SerializeField] private TextMeshPro optionText;  // 直接引用TextMeshPro组件
     [SerializeField] private Vector3 textOffset = new Vector3(0, 0, 0.5f);
-    [SerializeField] private float textSize = 1f;
+    [SerializeField] private float textSize = 2f;
 
     private Transform cameraTransform;
 

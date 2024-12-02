@@ -13,6 +13,7 @@ public class BackButton : MonoBehaviour
     public void switchScene()
     {
         LevelCompletionManager.Instance.MarkLevelAsCompleted(LevelNum);
+        Debug.Log($"Current PlayerPrefs values: Level_0_Completed = {PlayerPrefs.GetInt("Level_0_Completed", 0)}, Level_1_Completed = {PlayerPrefs.GetInt("Level_1_Completed", 0)}");
         StartCoroutine(LoadNextScene(sceneToLoad));
     }
     private System.Collections.IEnumerator LoadNextScene(string name)

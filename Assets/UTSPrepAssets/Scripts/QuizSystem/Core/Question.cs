@@ -9,6 +9,11 @@ public class Question
     [Tooltip("问题文本内容")]
     private string questionText;
 
+    [Header("Question Media")]
+    [SerializeField]
+    [Tooltip("问题附带的图片（可选）")]
+    private Sprite questionImage;
+
     [SerializeField]
     [Tooltip("选项内容（至少2个选项）")]
     private string[] options = new string[4]; // 默认4个选项
@@ -35,8 +40,10 @@ public class Question
     [Tooltip("回答问题的时间限制（秒）")]
     private float timeLimit = 10f;
 
+
     // 公开属性
     public string QuestionText => questionText;
+    public Sprite QuestionImage => questionImage;
     public string[] Options => options;
     public string Hint => hint;
     public int CorrectOptionIndex => correctOptionIndex;

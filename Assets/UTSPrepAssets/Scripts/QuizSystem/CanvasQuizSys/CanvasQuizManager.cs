@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -8,16 +8,17 @@ using UnityEngine.UI;
         public QuestionDatabase questionDatabase; // ScriptableObject that contains the question database
         private int topicMax;
         private List<int> answeredQuestions = new List<int>(); // Track questions that have been answered in the current round
-        public TextMeshProUGUI tipsText;
+        public TextMeshProUGUI ansText;
         public List<Toggle> toggleList;
         public TextMeshProUGUI indexText;
         public TextMeshProUGUI questionText;
+        public Image questionImage;
         public List<TextMeshProUGUI> optionTextList;
         private int topicIndex = 0;
 
         public Button BtnBack;
         public Button BtnNext;
-        public Button BtnTip;
+        public Button BtnAns;
         public Button BtnSubmit;
         public Image imageQuiz;
 
@@ -47,7 +48,7 @@ using UnityEngine.UI;
             toggleList[2].onValueChanged.AddListener((isOn) => AnswerRightWrongJudgment(isOn, 2));
             toggleList[3].onValueChanged.AddListener((isOn) => AnswerRightWrongJudgment(isOn, 3));
 
-            BtnTip.onClick.AddListener(() => Select_Answer(0));
+            BtnAns.onClick.AddListener(() => Select_Answer(0));
             BtnBack.onClick.AddListener(() => Select_Answer(1));
             BtnNext.onClick.AddListener(() => Select_Answer(2));
             BtnSubmit.onClick.AddListener(SubmitQuiz);
@@ -65,36 +66,57 @@ using UnityEngine.UI;
             BtnSubmit.gameObject.SetActive(false);
         }
 
-        void LoadAnswer()
+    void LoadAnswer()
+    {
+        Question currentQuestion = questionDatabase.GetQuestion(topicIndex);
+
+        // Reset toggles
+        for (int i = 0; i < toggleList.Count; i++)
         {
-            Question currentQuestion = questionDatabase.GetQuestion(topicIndex);
+            toggleList[i].isOn = false;
+            toggleList[i].interactable = !answeredQuestions.Contains(topicIndex);
+        }
+        BtnAns.gameObject.SetActive(false);
 
-            // Reset toggles
-            for (int i = 0; i < toggleList.Count; i++)
-            {
-                toggleList[i].isOn = false;
-                toggleList[i].interactable = !answeredQuestions.Contains(topicIndex);
-            }
-            BtnTip.interactable = false;
-
-            tipsText.text = "";
+        // 标记已回答的问题
+        if (answeredQuestions.Contains(topicIndex))
+        {
+            indexText.text = "<color=#27FF02FF>Question " + (topicIndex + 1) + " (Answered):</color>";
+        }
+        else
+        {
             indexText.text = "Question " + (topicIndex + 1) + ":";
-            questionText.text = currentQuestion.QuestionText;
-
-            // Set answer options
-            for (int i = 0; i < currentQuestion.Options.Length; i++)
-            {
-                optionTextList[i].text = currentQuestion.GetOption(i);
-            }
         }
 
-        void Select_Answer(int index)
+        ansText.text = "";
+        questionText.text = currentQuestion.QuestionText;
+
+        // 设置答案选项
+        for (int i = 0; i < currentQuestion.Options.Length; i++)
+        {
+            optionTextList[i].text = currentQuestion.GetOption(i);
+        }
+
+        // 设置问题图片
+        if (currentQuestion.QuestionImage != null)
+        {
+            questionImage.gameObject.SetActive(true);
+            questionImage.sprite = currentQuestion.QuestionImage;
+        }
+        else
+        {
+            questionImage.gameObject.SetActive(false); // 隐藏图片
+        }
+    }
+
+
+    void Select_Answer(int index)
         {
             switch (index)
             {
                 case 0: // Show tip
                     string correctAnswer = questionDatabase.GetQuestion(topicIndex).GetCorrectAnswerText();
-                    tipsText.text = "<color=#FFAB08FF>The correct answer is: " + correctAnswer + "</color>";
+                    ansText.text = "<color=#FFAB08FF>The correct answer is: " + correctAnswer + "</color>";
                     break;
 
                 case 1: // Previous question
@@ -105,7 +127,7 @@ using UnityEngine.UI;
                     }
                     else
                     {
-                        tipsText.text = "<color=#27FF02FF>There are no more questions ahead!</color>";
+                        ansText.text = "<color=#27FF02FF>There are no more questions ahead!</color>";
                     }
                     break;
 
@@ -117,7 +139,7 @@ using UnityEngine.UI;
                     }
                     else
                     {
-                        tipsText.text = "<color=#27FF02FF>Oops! This is the last question.</color>";
+                        ansText.text = "<color=#27FF02FF>Oops! This is the last question.</color>";
                     }
                     break;
             }
@@ -132,12 +154,12 @@ using UnityEngine.UI;
 
                 if (isCorrect)
                 {
-                    tipsText.text = "<color=#27FF02FF>Congratulations, you got it right!</color>";
+                    ansText.text = "<color=#27FF02FF>Congratulations, you got it right!</color>";
                     correctCount++;
                 }
                 else
                 {
-                    tipsText.text = "<color=#FF0020FF>Sorry, wrong answer!</color>";
+                    ansText.text = "<color=#FF0020FF>Sorry, wrong answer!</color>";
                 }
 
                 answerCount++;
@@ -147,7 +169,7 @@ using UnityEngine.UI;
                 answeredQuestions.Add(topicIndex);
 
                 // Enable BtnTip after answering
-                BtnTip.interactable = true;
+                BtnAns.gameObject.SetActive(true);
 
                 // Disable toggles after answering
                 for (int i = 0; i < toggleList.Count; i++)

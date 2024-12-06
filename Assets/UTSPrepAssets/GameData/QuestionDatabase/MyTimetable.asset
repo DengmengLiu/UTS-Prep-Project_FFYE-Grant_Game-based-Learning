@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - questionText: 'What should you do if your preferred class time is full? '
+    questionImage: {fileID: 0}
     options:
     - 'Select a different subject '
     - 'Log out and log back in '
@@ -25,6 +26,7 @@ MonoBehaviour:
     penalty: 5
     timeLimit: 10
   - questionText: 'When can you change your class allocations in myTimetable? '
+    questionImage: {fileID: 0}
     options:
     - 'After the census date '
     - 'Before the semester starts '
@@ -36,9 +38,10 @@ MonoBehaviour:
     penalty: 5
     timeLimit: 10
   - questionText: 'What is displayed in red on myTimetable? '
+    questionImage: {fileID: 21300000, guid: 80146291d85473d4086e0e6e06d7f7ee, type: 3}
     options:
     - 'Classes that need to be allocated '
-    - 'Classes that have been canceled '
+    - 'Classes that have been cancelled '
     - 'Classes you are waitlisted for '
     - 'Classes that are not available this semester '
     correctOptionIndex: 0
@@ -48,6 +51,7 @@ MonoBehaviour:
     timeLimit: 10
   - questionText: "What happens if a spot becomes available in a class you\u2019re
       waitlisted for? "
+    questionImage: {fileID: 0}
     options:
     - 'You will automatically be allocated to the class '
     - You will receive an email notification and must confirm your place
@@ -59,6 +63,7 @@ MonoBehaviour:
     penalty: 5
     timeLimit: 10
   - questionText: 'What happens when you are deallocated from a class in myTimetable? '
+    questionImage: {fileID: 0}
     options:
     - 'You are permanently removed from the subject '
     - 'You must reallocate yourself to another available time '

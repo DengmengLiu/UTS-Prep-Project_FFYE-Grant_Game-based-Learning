@@ -8336,15 +8336,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16085467202944867, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.36301506
+      value: 0.3630151
       objectReference: {fileID: 0}
     - target: {fileID: 16085467202944867, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.45769763
+      value: 0.45769772
       objectReference: {fileID: 0}
     - target: {fileID: 16085467202944867, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.21208324
+      value: -0.21208325
       objectReference: {fileID: 0}
     - target: {fileID: 383637362586578238, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: m_Strategy
@@ -8514,6 +8514,10 @@ PrefabInstance:
       propertyPath: m_Lens.NearClipPlane
       value: 0.275
       objectReference: {fileID: 0}
+    - target: {fileID: 4372200181213736250, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
+      propertyPath: freeLookCamera
+      value: 
+      objectReference: {fileID: 482586127}
     - target: {fileID: 4374792430760149799, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: promptText
       value: 
@@ -8621,9 +8625,6 @@ PrefabInstance:
       addedObject: {fileID: 5006512736820427447}
     - targetCorrespondingSourceObject: {fileID: 3541754002163558908, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5006512736820427446}
-    - targetCorrespondingSourceObject: {fileID: 3541754002163558908, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5006512736820427445}
     - targetCorrespondingSourceObject: {fileID: 3541754002163558908, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       insertIndex: -1
@@ -8663,18 +8664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAnimationTransitionTime: 0.141
   stopAnimationTransitionTime: 0.148
---- !u!114 &5006512736820427446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668828738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e78af2bc8861c740bda14a21a94677e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5006512736820427447
 MonoBehaviour:
   m_ObjectHideFlags: 0

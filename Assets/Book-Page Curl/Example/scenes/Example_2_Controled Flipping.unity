@@ -123,6 +123,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &96966397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 120216, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &96966402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96966397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &370341741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22433904, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.x
@@ -248,7 +280,10 @@ PrefabInstance:
       value: 1305.0044
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+    - {fileID: 11498368, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+    - {fileID: 11441878, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+    - {fileID: 11430880, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+    - {fileID: 11403584, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -258,6 +293,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1007772758}
+    - targetCorrespondingSourceObject: {fileID: 154094, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1438222466}
+    - targetCorrespondingSourceObject: {fileID: 183440, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 545740912}
+    - targetCorrespondingSourceObject: {fileID: 120216, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 96966402}
+    - targetCorrespondingSourceObject: {fileID: 128206, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1248534996}
   m_SourcePrefab: {fileID: 100100000, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
 --- !u!114 &370341742 stripped
 MonoBehaviour:
@@ -353,8 +400,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1007772758}
+        m_TargetAssemblyTypeName: AutoFlip, Assembly-CSharp
         m_MethodName: FlipRightPage
         m_Mode: 1
         m_Arguments:
@@ -403,6 +450,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533084653}
   m_CullTransparentMesh: 0
+--- !u!1 &545740907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 183440, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &545740912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545740907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &646780530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11435694, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &674785232 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
@@ -574,10 +664,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mode: 0
   PageFlipTime: 1
-  TimeBetweenPages: 1
+  TimeBetweenPages: 2
   DelayBeforeStarting: 0
-  AutoStartFlip: 1
-  ControledBook: {fileID: 1007772759}
+  AutoStartFlip: 0
+  ControledBook: {fileID: 0}
   AnimationFramesCount: 40
 --- !u!114 &1007772759
 MonoBehaviour:
@@ -592,29 +682,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1504805618}
-  BookPanel: {fileID: 0}
-  background: {fileID: 0}
+  BookPanel: {fileID: 674785232}
+  background: {fileID: 21300000, guid: e1e096743feb62f4fb247c15e23dad46, type: 3}
   bookPages:
-  - {fileID: 8400000, guid: 1419a79d336428d40a9e92dcd01e3249, type: 2}
-  - {fileID: 8400000, guid: 6b27ac97c264d334082e46df0ae488aa, type: 2}
-  - {fileID: 8400000, guid: 7b3810bbbde458247bb90c8ddc3c8561, type: 2}
-  - {fileID: 8400000, guid: fa306ac62b0fa594ab5905112819e560, type: 2}
-  - {fileID: 8400000, guid: 942e41847a8f92147928de2cf4926d59, type: 2}
-  - {fileID: 8400000, guid: fa306ac62b0fa594ab5905112819e560, type: 2}
+  - {fileID: 2800000, guid: b1bac3987b1ad064a80f72496ee46425, type: 3}
+  - {fileID: 2800000, guid: a8371807677c9624f95debc13138fe33, type: 3}
+  - {fileID: 2800000, guid: 9ad9c7be1dcdd6d45ab6e643fc600a88, type: 3}
+  - {fileID: 2800000, guid: b85050c83db242e4eafba8f57eb350d9, type: 3}
+  - {fileID: 2800000, guid: b0c18c676ab4d4343adc234472e1d618, type: 3}
+  - {fileID: 2800000, guid: 86cccff4f962a034c841b8a741b9d50b, type: 3}
   interactable: 1
   enableShadowEffect: 1
   currentPage: 0
   ClippingPlane: {fileID: 370341742}
-  NextPageClip: {fileID: 0}
-  Shadow: {fileID: 0}
-  ShadowLTR: {fileID: 0}
-  Left: {fileID: 0}
-  LeftNext: {fileID: 0}
-  Right: {fileID: 0}
-  RightNext: {fileID: 0}
+  NextPageClip: {fileID: 646780530}
+  Shadow: {fileID: 1333896855}
+  ShadowLTR: {fileID: 1270341516}
+  Left: {fileID: 96966402}
+  LeftNext: {fileID: 1248534996}
+  Right: {fileID: 545740912}
+  RightNext: {fileID: 1438222466}
   OnFlip:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1248534992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 128206, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1248534996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248534992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: e1e096743feb62f4fb247c15e23dad46, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &1270341516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11418382, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1278963087
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +849,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333896855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11425334, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1438222462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 154094, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 370341741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438222466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438222462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: b1bac3987b1ad064a80f72496ee46425, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &1504805615
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,8 +1158,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1007772758}
+        m_TargetAssemblyTypeName: AutoFlip, Assembly-CSharp
         m_MethodName: FlipLeftPage
         m_Mode: 1
         m_Arguments:

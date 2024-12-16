@@ -1,6 +1,7 @@
 // CharacterMovement.cs
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
@@ -21,6 +22,8 @@ public class CharacterMovement : MonoBehaviour
     private float currentSpeed;
     private float speedVelocity;
     private Camera mainCamera;
+    public CinemachineFreeLook freeLookCamera; // 用于引用Cinemachine FreeLook摄像机
+
 
      private void Awake()
     {
@@ -118,6 +121,25 @@ public class CharacterMovement : MonoBehaviour
         {
             currentSpeed = 0;
             UpdateAnimation(0);
+
+             if (freeLookCamera != null)
+            {
+                freeLookCamera.m_XAxis.m_InputAxisName = "";
+                freeLookCamera.m_YAxis.m_InputAxisName = "";
+
+                freeLookCamera.m_XAxis.m_InputAxisValue = 0f;
+                freeLookCamera.m_YAxis.m_InputAxisValue = 0f;
+            }
+
+        }
+        else
+        {
+            // 恢复摄像机输入
+            if (freeLookCamera != null)
+            {
+                freeLookCamera.m_XAxis.m_InputAxisName = "Mouse X";
+                freeLookCamera.m_YAxis.m_InputAxisName = "Mouse Y";
+            }
         }
     }
 }

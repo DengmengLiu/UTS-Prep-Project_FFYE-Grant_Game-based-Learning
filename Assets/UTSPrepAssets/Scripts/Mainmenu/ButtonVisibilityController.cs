@@ -6,6 +6,8 @@ public class BookPageButtonController : MonoBehaviour
 {
     public Button selectBtn_L;
     public Button selectBtn_R;
+    public Button prevBtn;
+    public Button nextBtn;
     public BookRaw bookRaw;
     private float screenWidth;
     private float mouseXPosition;
@@ -45,24 +47,32 @@ public class BookPageButtonController : MonoBehaviour
             if (currentPage == 0) // 第一页
             {
                 selectBtn_L.gameObject.SetActive(false);
+                prevBtn.gameObject.SetActive(false);
                 selectBtn_R.gameObject.SetActive(mouseXPosition >= screenWidth / 2);
+                nextBtn.gameObject.SetActive(mouseXPosition >= screenWidth / 2);
             }
             else if (currentPage == totalPageCount) // 最后一页
             {
                 selectBtn_L.gameObject.SetActive(mouseXPosition < screenWidth / 2);
+                prevBtn.gameObject.SetActive(mouseXPosition < screenWidth / 2);
                 selectBtn_R.gameObject.SetActive(false);
+                nextBtn.gameObject.SetActive(false);
             }
             else // 中间页
             {
                 if (mouseXPosition < screenWidth / 2)
                 {
                     selectBtn_L.gameObject.SetActive(true);
+                    prevBtn.gameObject.SetActive(true);
                     selectBtn_R.gameObject.SetActive(false);
+                    nextBtn.gameObject.SetActive(false);
                 }
                 else
                 {
                     selectBtn_L.gameObject.SetActive(false);
+                    nextBtn.gameObject.SetActive(true);
                     selectBtn_R.gameObject.SetActive(true);
+                    prevBtn.gameObject.SetActive(false);
                 }
             }
         }

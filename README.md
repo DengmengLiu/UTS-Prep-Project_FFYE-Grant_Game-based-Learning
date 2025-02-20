@@ -1,6 +1,6 @@
 # FFYE Grant Project (UTS Prep Guide)
 **August 2024 - December 2024**   
-[Link](https://liudengmeng.itch.io/uts-perp)
+[Demo](https://liudengmeng.itch.io/uts-perp)
 
 ## Project Overview
 This project aims to help new students navigate key university processes, such as course enrolment, academic support, and timetable management, through an interactive game-based system. By leveraging game mechanics, the project enhances user engagement and improves the efficiency of information retention compared to traditional methods.

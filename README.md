@@ -1,6 +1,5 @@
 # FFYE Grant Project (UTS Prep Guide)
-**August 2024 - December 2024**  
-**University of Technology Sydney (UTS)**  
+**August 2024 - December 2024**   
 [Link](https://liudengmeng.itch.io/uts-perp)
 
 ## Project Overview
